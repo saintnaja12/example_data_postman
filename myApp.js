@@ -27,7 +27,6 @@ app.get('/users', (req, res) => {
 
 // Read One - GET /users/:id
 app.get('/users/:id', (req, res) => {
-  console.log("🚀 ~ app.get ~ req:", req)
   const user = users.find(u => u.id === req.params.id);
   if (!user) {
     return res.status(404).json({ error: 'User not found' });
